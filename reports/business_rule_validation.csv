@@ -1,0 +1,5 @@
+dataset,column,actual_distinct_values,unexpected_values,missing_allowed_values,validation_status
+learners,experience_level,3,,,PASS
+courses,category,4,,,PASS
+enrollments,enrollment_status,3,,,PASS
+learning_events,event_type,4,,,PASS
