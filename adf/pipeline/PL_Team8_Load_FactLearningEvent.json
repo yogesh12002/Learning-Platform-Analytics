@@ -1,0 +1,124 @@
+{
+	"name": "PL_Team8_Load_FactLearningEvent",
+	"properties": {
+		"activities": [
+			{
+				"name": "CP_FactLearningEvent",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "event_id",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "event_id",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "learner_id",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "learner_id",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "course_id",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "course_id",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "event_date",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "event_date",
+									"type": "Date",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "event_type",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "event_type",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "DS_LearningEvents_Curated",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DS_SQL_FactLearningEvent",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2026-11-25T06:07:53Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

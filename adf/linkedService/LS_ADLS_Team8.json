@@ -1,0 +1,11 @@
+{
+	"name": "LS_ADLS_Team8",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://stteam8learn2026.dfs.core.windows.net/"
+		}
+	}
+}

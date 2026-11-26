@@ -1,0 +1,30 @@
+{
+	"name": "DS_SQL_DimCourse",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_AzureSQL_Team8",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "course_id",
+				"type": "varchar"
+			},
+			{
+				"name": "course_name",
+				"type": "varchar"
+			},
+			{
+				"name": "category",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "DimCourse"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

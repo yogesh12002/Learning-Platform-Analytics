@@ -1,0 +1,45 @@
+{
+	"name": "DS_Enrollments_Raw",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ADLS_Team8",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "enrollments.csv",
+				"fileSystem": "raw"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "enrollment_id",
+				"type": "String"
+			},
+			{
+				"name": "learner_id",
+				"type": "String"
+			},
+			{
+				"name": "course_id",
+				"type": "String"
+			},
+			{
+				"name": "enrollment_date",
+				"type": "String"
+			},
+			{
+				"name": "enrollment_status",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

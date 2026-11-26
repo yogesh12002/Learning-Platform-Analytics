@@ -1,0 +1,38 @@
+{
+	"name": "DS_SQL_FactLearningEvent",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_AzureSQL_Team8",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "event_id",
+				"type": "varchar"
+			},
+			{
+				"name": "learner_id",
+				"type": "varchar"
+			},
+			{
+				"name": "course_id",
+				"type": "varchar"
+			},
+			{
+				"name": "event_date",
+				"type": "date"
+			},
+			{
+				"name": "event_type",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "FactLearningEvent"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

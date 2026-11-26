@@ -1,0 +1,16 @@
+{
+	"name": "adf-team8-learning",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true,
+			"isExplicitlySet": false
+		}
+	},
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "977d7672-12cc-4885-9225-d52c7842ffe6",
+		"tenantId": "98eb3845-78e9-4d0c-b759-e1529d7c0cf1"
+	}
+}

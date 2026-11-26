@@ -1,0 +1,45 @@
+{
+	"name": "DS_LearningEvents_Raw",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ADLS_Team8",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "learning_events.csv",
+				"fileSystem": "raw"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "event_id",
+				"type": "String"
+			},
+			{
+				"name": "learner_id",
+				"type": "String"
+			},
+			{
+				"name": "course_id",
+				"type": "String"
+			},
+			{
+				"name": "event_date",
+				"type": "String"
+			},
+			{
+				"name": "event_type",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

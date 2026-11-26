@@ -1,0 +1,38 @@
+{
+	"name": "DS_SQL_FactEnrollment",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_AzureSQL_Team8",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "enrollment_id",
+				"type": "varchar"
+			},
+			{
+				"name": "learner_id",
+				"type": "varchar"
+			},
+			{
+				"name": "course_id",
+				"type": "varchar"
+			},
+			{
+				"name": "enrollment_date",
+				"type": "date"
+			},
+			{
+				"name": "enrollment_status",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "FactEnrollment"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
