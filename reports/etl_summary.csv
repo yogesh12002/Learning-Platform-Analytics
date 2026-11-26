@@ -1,0 +1,5 @@
+dataset,source_records,curated_records,rejected_records
+learners,30,30,0
+courses,8,8,0
+enrollments,60,60,0
+learning_events,180,180,0
